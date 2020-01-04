@@ -9,7 +9,3 @@ export default function getMedia() {
 
     return media.toFixed(2);
 }
-
-function teste() {
-    return 0;
-}
