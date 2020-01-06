@@ -5,13 +5,22 @@
     "main": "index.js",
     "scripts": {
         "test": "mocha tests/**/*.test.js --require esm",
+        "test:cover": "nyc npm run test && npm run test:report",
+        "test:report": "nyc report --reporter=lcov",
         "lint": "eslint ./src",
-        "prettier": "prettier --config ./.prettierrc --write src/**/*.js"
+        "prettier": "prettier --config ./.prettierrc --write src/**/*.js",
+        "build": "rm -rf dist && rollup -c && npm run minify",
+        "minify": "uglifyjs dist/bundle.umd.js -o dist/bundle.umd.js",
+        "build:cjs": "rollup src/index.js --format cjs --file dist/bundle.cjs.js",
+        "build:iife": "rollup src/index.js --format iife --file dist/bundle.iife.js",
+        "build:umd": "rollup src/index.js --format umd --name \"belugs\" --file dist/bundle.umd.js"
     },
     "keywords": [],
     "author": "Daniel Tapias Morales <tapmorales@gmail.com> (tapmorales.com)",
     "license": "MIT",
     "devDependencies": {
+        "@babel/core": "^7.7.7",
+        "@babel/preset-env": "^7.7.7",
         "chai": "^4.2.0",
         "eslint": "^6.8.0",
         "eslint-config-prettier": "^6.9.0",
@@ -19,7 +28,11 @@
         "esm": "^3.2.25",
         "husky": "^3.1.0",
         "mocha": "^6.2.2",
-        "prettier": "^1.19.1"
+        "nyc": "^15.0.0",
+        "prettier": "^1.19.1",
+        "rollup": "^1.27.14",
+        "rollup-plugin-babel": "^4.3.3",
+        "uglify-js": "^3.7.3"
     },
     "husky": {
         "hooks": {
