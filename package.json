@@ -1,8 +1,14 @@
 {
     "name": "belugs",
-    "version": "0.0.0",
-    "description": "",
-    "main": "index.js",
+    "version": "1.0.0",
+    "description": "lib desenvolvida para o curso de ferramentas frontend",
+    "main": "dist/bundle.umd.js",
+    "module": "src/index.js",
+    "files": [
+        "dist",
+        "src"
+    ],
+    "sideEffects": false,
     "scripts": {
         "test": "mocha tests/**/*.test.js --require esm",
         "test:cover": "nyc npm run test && npm run test:report",
@@ -15,7 +21,10 @@
         "build:iife": "rollup src/index.js --format iife --file dist/bundle.iife.js",
         "build:umd": "rollup src/index.js --format umd --name \"belugs\" --file dist/bundle.umd.js"
     },
-    "keywords": [],
+    "keywords": [
+        "javascript",
+        "frontend"
+    ],
     "author": "Daniel Tapias Morales <tapmorales@gmail.com> (tapmorales.com)",
     "license": "MIT",
     "devDependencies": {
