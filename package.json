@@ -1,6 +1,6 @@
 {
     "name": "belugs",
-    "version": "1.1.0",
+    "version": "2.0.0",
     "description": "lib desenvolvida para o curso de ferramentas frontend",
     "main": "dist/bundle.umd.js",
     "module": "src/index.js",
