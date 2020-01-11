@@ -2,5 +2,5 @@
 
 ## 1.0.0
 
--   Method getMedia()
--   Method getRamdonNumber()
+-   Method getMedia
+-   Method getRamdonNumber
