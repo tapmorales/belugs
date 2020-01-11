@@ -7,5 +7,5 @@ export default function getMedia() {
             return current + sum;
         }) / args.length;
 
-    return media.toFixed(2);
+    return media.toFixed(3);
 }
