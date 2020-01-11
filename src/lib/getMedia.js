@@ -3,8 +3,8 @@ export default function getMedia() {
 
     if (!args.length) return "0.00";
     let media =
-        args.reduce((current, sum) => {
-            return current + sum;
+        args.reduce((current, s) => {
+            return current + s;
         }) / args.length;
 
     return media.toFixed(2);
