@@ -6,6 +6,5 @@ export default function getMedia() {
         args.reduce((current, sum) => {
             return current + sum;
         }) / args.length;
-
-    return media.toFixed(2);
+    return media;
 }
